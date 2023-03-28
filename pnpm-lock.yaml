@@ -10,6 +10,8 @@ specifiers:
   '@types/react': 18.0.30
   '@types/react-dom': 18.0.11
   autoprefixer: ^10.4.14
+  class-variance-authority: ^0.4.0
+  clsx: ^1.2.1
   eslint: 8.36.0
   eslint-config-next: 13.2.4
   eslint-config-prettier: ^8.8.0
@@ -24,6 +26,7 @@ specifiers:
   react-dom: 18.2.0
   react-icons: ^4.8.0
   react-redux: ^8.0.5
+  tailwind-merge: ^1.10.0
   tailwindcss: ^3.2.7
   typescript: 5.0.2
 
@@ -32,6 +35,8 @@ dependencies:
   '@types/node': 18.15.10
   '@types/react': 18.0.30
   '@types/react-dom': 18.0.11
+  class-variance-authority: 0.4.0_typescript@5.0.2
+  clsx: 1.2.1
   eslint: 8.36.0
   eslint-config-next: 13.2.4_j4766f7ecgqbon3u7zlxn5zszu
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
@@ -40,6 +45,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.8.0_react@18.2.0
   react-redux: 8.0.5_l7jektmlbfkfzseoswiw3ervwq
+  tailwind-merge: 1.10.0
   typescript: 5.0.2
 
 devDependencies:
@@ -967,6 +973,20 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /class-variance-authority/0.4.0_typescript@5.0.2:
+    resolution:
+      {
+        integrity: sha512-74enNN8O9ZNieycac/y8FxqgyzZhZbxmCitAtAeUrLPlxjSd5zA7LfpprmxEcOmQBnaGs5hYhiSGnJ0mqrtBLQ==,
+      }
+    peerDependencies:
+      typescript: '>= 4.5.5 < 5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.0.2
+    dev: false
+
   /clean-stack/2.2.0:
     resolution:
       {
@@ -1012,6 +1032,14 @@ packages:
       {
         integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==,
       }
+    dev: false
+
+  /clsx/1.2.1:
+    resolution:
+      {
+        integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==,
+      }
+    engines: { node: '>=6' }
     dev: false
 
   /color-convert/2.0.1:
@@ -3856,6 +3884,13 @@ packages:
     dependencies:
       '@pkgr/utils': 2.3.1
       tslib: 2.5.0
+    dev: false
+
+  /tailwind-merge/1.10.0:
+    resolution:
+      {
+        integrity: sha512-WFnDXSS4kFTZwjKg5/oZSGzBRU/l+qcbv5NVTzLUQvJ9yovDAP05h0F2+ZFW0Lw9EcgRoc2AfURUdZvnEFrXKg==,
+      }
     dev: false
 
   /tailwindcss/3.2.7_postcss@8.4.21:
