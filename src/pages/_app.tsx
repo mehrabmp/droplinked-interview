@@ -4,6 +4,8 @@ import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 import { Provider } from 'react-redux';
 import { store } from '@/store/store';
+import { DefaultSeo } from 'next-seo';
+import SEO from '../../next-seo.config';
 import '@/styles/globals.css';
 
 const inter = Inter({
@@ -25,6 +27,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <Provider store={store}>
       <main className={`${inter.variable} font-sans`}>
+        <DefaultSeo {...SEO} />
         {getLayout(<Component {...pageProps} />)}
       </main>
     </Provider>

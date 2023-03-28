@@ -19,7 +19,16 @@ const Home: NextPageWithLayout = () => {
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {
-  return <PrimaryLayout title="Droplinked">{page}</PrimaryLayout>;
+  return (
+    <PrimaryLayout
+      seo={{
+        title: 'Droplinked | Products',
+        description: 'Products of Droplinked website',
+      }}
+    >
+      {page}
+    </PrimaryLayout>
+  );
 };
 
 export default Home;

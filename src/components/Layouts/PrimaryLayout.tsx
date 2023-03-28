@@ -1,19 +1,14 @@
-import { NextSeo } from 'next-seo';
+import { NextSeo, type NextSeoProps } from 'next-seo';
 import { Header } from '@/components';
 
 interface PrimaryLayoutProps extends React.PropsWithChildren {
-  title?: string;
-  description?: string;
+  seo: NextSeoProps;
 }
 
-export const PrimaryLayout = ({
-  title = 'Droplinked',
-  description = 'Droplinked description',
-  children,
-}: PrimaryLayoutProps) => {
+export const PrimaryLayout = ({ seo, children }: PrimaryLayoutProps) => {
   return (
     <>
-      <NextSeo title={title} description={description} />
+      <NextSeo {...seo} />
       <Header />
       {children}
     </>
