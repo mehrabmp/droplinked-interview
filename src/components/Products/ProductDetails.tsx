@@ -3,13 +3,14 @@ import { useState } from 'react';
 import { Card } from '@/components/ui';
 import { Product } from '@/types';
 import { ProductGallery } from './ProductGallery';
+import { ProductVariants } from './ProductVariants';
 
 interface ProductDetailsProps {
   product: Product;
 }
 
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
-  const { images, title, body_html } = product.shopifyData;
+  const { images, title, body_html, variants } = product.shopifyData;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -57,6 +58,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           </div>
         </div>
       </div>
+      <ProductVariants product={product} variants={variants} />
     </Card>
   );
 };
