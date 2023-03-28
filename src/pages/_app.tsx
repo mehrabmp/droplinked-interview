@@ -1,5 +1,7 @@
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
+import { Provider } from 'react-redux';
+import { store } from '@/store/store';
 import '@/styles/globals.css';
 
 const inter = Inter({
@@ -9,8 +11,10 @@ const inter = Inter({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${inter.variable} font-sans`}>
-      <Component {...pageProps} />
-    </main>
+    <Provider store={store}>
+      <main className={`${inter.variable} font-sans`}>
+        <Component {...pageProps} />
+      </main>
+    </Provider>
   );
 }
