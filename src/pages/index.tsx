@@ -1,12 +1,15 @@
 import type { ReactElement } from 'react';
 import type { NextPageWithLayout } from '@/pages/_app';
-import { PrimaryLayout } from '@/components';
+import { PrimaryLayout, ProductList } from '@/components';
 
 const Home: NextPageWithLayout = () => {
   return (
-    <>
-      <h1 className="font-bold"></h1>
-    </>
+    <div className="mx-auto h-full p-4 xl:container">
+      <h1 className="mt-20 mb-10 text-center text-xl font-bold text-primary">
+        Hungry Artist Holders Store
+      </h1>
+      <ProductList />
+    </div>
   );
 };
 
