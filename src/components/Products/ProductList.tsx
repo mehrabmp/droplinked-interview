@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useGetProductsQuery } from '@/services/product';
-import { ProductItem, ProductSkeleton } from './ProductItem';
+import { ProductItem, ProductItemSkeleton } from './ProductItem';
 
 interface Props {
   searchTerm: string;
@@ -23,7 +23,7 @@ export const ProductList = ({ searchTerm }: Props) => {
       {isLoading &&
         Array(18)
           .fill('')
-          .map((_, index) => <ProductSkeleton key={index} />)}
+          .map((_, index) => <ProductItemSkeleton key={index} />)}
       {filteredProducts &&
         filteredProducts.map(product => (
           <ProductItem key={product._id} product={product} />

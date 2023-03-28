@@ -9,7 +9,7 @@ interface ProductItemProps {
 
 const shimmer = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_1s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/50 before:to-transparent`;
 
-export const ProductSkeleton = () => {
+export const ProductItemSkeleton = () => {
   return (
     <div className="space-y-4 rounded-lg bg-white/5 p-4">
       <div className={`h-[200px] rounded-lg bg-rose-100/10 ${shimmer}`}></div>
