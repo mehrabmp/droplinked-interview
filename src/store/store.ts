@@ -1,16 +1,30 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { productApi } from '@/services/product';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import cartReducer from './slices/cartSlice';
 
-export const store = configureStore({
-  reducer: {
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+const persistedReducer = persistReducer(
+  persistConfig,
+  combineReducers({
     cart: cartReducer,
     [productApi.reducerPath]: productApi.reducer,
-  },
+  })
+);
+
+export const store = configureStore({
+  reducer: persistedReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat(productApi.middleware),
 });
+
+export const persistor = persistStore(store);
 
 setupListeners(store.dispatch);
 

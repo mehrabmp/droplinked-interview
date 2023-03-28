@@ -3,7 +3,8 @@ import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 import { Provider } from 'react-redux';
-import { store } from '@/store/store';
+import { persistor, store } from '../store/store';
+import { PersistGate } from 'redux-persist/integration/react';
 import { DefaultSeo } from 'next-seo';
 import SEO from '../../next-seo.config';
 import '@/styles/globals.css';
@@ -26,10 +27,12 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <Provider store={store}>
-      <main className={`${inter.variable} font-sans`}>
-        <DefaultSeo {...SEO} />
-        {getLayout(<Component {...pageProps} />)}
-      </main>
+      <PersistGate loading={null} persistor={persistor}>
+        <main className={`${inter.variable} font-sans`}>
+          <DefaultSeo {...SEO} />
+          {getLayout(<Component {...pageProps} />)}
+        </main>
+      </PersistGate>
     </Provider>
   );
 }
