@@ -11,6 +11,13 @@ module.exports = {
       colors: {
         primary: '#2EC99E',
       },
+      keyframes: {
+        shimmer: {
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        },
+      },
     },
   },
   darkMode: 'class',
