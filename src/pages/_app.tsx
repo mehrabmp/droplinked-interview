@@ -1,3 +1,5 @@
+import type { ReactElement, ReactNode } from 'react';
+import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 import { Provider } from 'react-redux';
@@ -9,11 +11,21 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+export type NextPageWithLayout<P = unknown> = NextPage<P> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+interface AppPropsWithLayout extends AppProps {
+  Component: NextPageWithLayout;
+}
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? (page => page);
+
   return (
     <Provider store={store}>
       <main className={`${inter.variable} font-sans`}>
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
       </main>
     </Provider>
   );

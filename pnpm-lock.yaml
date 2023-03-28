@@ -16,11 +16,13 @@ specifiers:
   husky: ^8.0.0
   lint-staged: ^13.2.0
   next: 13.2.4
+  next-seo: ^5.15.0
   postcss: ^8.4.21
   prettier: ^2.8.7
   prettier-plugin-tailwindcss: ^0.2.5
   react: 18.2.0
   react-dom: 18.2.0
+  react-icons: ^4.8.0
   react-redux: ^8.0.5
   tailwindcss: ^3.2.7
   typescript: 5.0.2
@@ -33,8 +35,10 @@ dependencies:
   eslint: 8.36.0
   eslint-config-next: 13.2.4_j4766f7ecgqbon3u7zlxn5zszu
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
+  next-seo: 5.15.0_ld2jel3hspngo3u5lti2kgl2sq
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.8.0_react@18.2.0
   react-redux: 8.0.5_l7jektmlbfkfzseoswiw3ervwq
   typescript: 5.0.2
 
@@ -2730,6 +2734,21 @@ packages:
         integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==,
       }
 
+  /next-seo/5.15.0_ld2jel3hspngo3u5lti2kgl2sq:
+    resolution:
+      {
+        integrity: sha512-LGbcY91yDKGMb7YI+28n3g+RuChUkt6pXNpa8FkfKkEmNiJkeRDEXTnnjVtwT9FmMhG6NH8qwHTelGrlYm9rgg==,
+      }
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 13.2.4_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /next/13.2.4_biqbaboplfbrettd7655fr4n2y:
     resolution:
       {
@@ -3308,6 +3327,17 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-icons/4.8.0_react@18.2.0:
+    resolution:
+      {
+        integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==,
+      }
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

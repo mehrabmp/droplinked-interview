@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', ...fontFamily.sans],
       },
+      colors: {
+        primary: '#2EC99E',
+      },
     },
   },
   darkMode: 'class',
