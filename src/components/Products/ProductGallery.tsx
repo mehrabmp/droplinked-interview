@@ -48,7 +48,7 @@ export const ProductGallery = ({
           <SplideSlide key={index}>
             <Image
               src={image.src}
-              alt={'asd'}
+              alt={`Product image ${index + 1}`}
               width={100}
               height={100}
               className={cn(
